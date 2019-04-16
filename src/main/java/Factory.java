@@ -1,5 +1,7 @@
 package main.java;
 
 public interface Factory {
-    Car makeCar();
+    int numCarsMade();
+    
+    double costPerCar();
 }

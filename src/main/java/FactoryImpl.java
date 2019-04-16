@@ -4,10 +4,15 @@ public class FactoryImpl implements Factory {
     private Manufacturer manufacturer;
     
     @Override
-    public Car makeCar() {
-        Car newCar = new Car();
-        return newCar;
+    public int numCarsMade() {
+        return 0;
     }
+    
+    @Override
+    public double costPerCar() {
+        return 0.0;
+    }
+    
     public Manufacturer getManufacturer() {
         return manufacturer;
     }
@@ -15,4 +20,5 @@ public class FactoryImpl implements Factory {
     public void setManufacturer(Manufacturer manufacturer) {
         this.manufacturer = manufacturer;
     }
+
 }
