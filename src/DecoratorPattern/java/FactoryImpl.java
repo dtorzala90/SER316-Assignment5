@@ -1,4 +1,6 @@
-package main.java;
+package DecoratorPattern.java;
+
+import main.java.Manufacturer;
 
 public class FactoryImpl implements Factory {
     private Manufacturer manufacturer;

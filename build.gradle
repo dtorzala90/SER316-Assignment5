@@ -23,10 +23,18 @@ dependencies {
  	compile 'com.googlecode.json-simple:json-simple:1.1.1'
 }
 
+test {
+  filter {
+    //specific test class
+    includeTestsMatching "FactoryTest"
+  }
+}
+
 sourceSets {
     main {
         java {
             srcDirs 'src/main/java'
+            srcDirs 'src/test/java'
         }
     }
  }

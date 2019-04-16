@@ -1,4 +1,4 @@
-package main.java;
+package DecoratorPattern.java;
 
 public class FactoryDecorator implements Factory {
     private Factory factory;
