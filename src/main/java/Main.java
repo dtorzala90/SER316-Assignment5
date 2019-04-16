@@ -3,7 +3,7 @@ package main.java;
 public class Main {
 
     public static void main(String[] args)throws Exception {
-        System.out.print("Hello World");
-     
+        FactoryDecorator decoratedFactory = new FactoryDecorator(new TruckSpeedupDecorator(new FactoryImpl()));
+        System.out.println(decoratedFactory.numCarsMade());
     }
 }

@@ -2,8 +2,8 @@ package main.java;
 
 public class HybridSpeedupDecorator extends FactoryDecorator {
     
-    public HybridSpeedupDecorator(Factory factory, String typeOfCar) {
-        super(factory, typeOfCar);
+    public HybridSpeedupDecorator(Factory factory) {
+        super(factory);
     }
     
     @Override
@@ -12,6 +12,6 @@ public class HybridSpeedupDecorator extends FactoryDecorator {
     }
     
     private int calculateNumCarsMade(int num) {
-        return (int) Math.floor(num * 1.5);
+        return (int) Math.floor(num * 1.8);
     }
 }

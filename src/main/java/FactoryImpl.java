@@ -5,12 +5,12 @@ public class FactoryImpl implements Factory {
     
     @Override
     public int numCarsMade() {
-        return 0;
+        return 10;
     }
     
     @Override
     public double costPerCar() {
-        return 0.0;
+        return 5.0;
     }
     
     public Manufacturer getManufacturer() {
