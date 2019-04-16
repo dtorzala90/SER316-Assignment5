@@ -1,19 +1,17 @@
 package test.java;
 
-import main.java.Manufacturer;
-
-import java.util.ArrayList;
-
-import org.junit.Before;
-
-import org.junit.Test;
-
 import DecoratorPattern.java.Factory;
 import DecoratorPattern.java.FactoryDecorator;
 import DecoratorPattern.java.FactoryImpl;
 import DecoratorPattern.java.HybridSpeedupDecorator;
 import DecoratorPattern.java.SportsCarSpeedupDecorator;
 import DecoratorPattern.java.TruckSpeedupDecorator;
+import main.java.Manufacturer;
+
+import java.util.ArrayList;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class Assignment5Tests {
     Factory thisFactory;
@@ -28,7 +26,7 @@ public class Assignment5Tests {
         Factory f = new FactoryImpl();
         Manufacturer m = new Manufacturer("Volkswagen",f);
         m.setName("Bob");
-        assert(m.getName() == "Bob");
+        assert (m.getName() == "Bob");
     }
     
     //This tests the method addFactory under Manufacturer class
@@ -37,33 +35,33 @@ public class Assignment5Tests {
         Factory f1 = new FactoryImpl();
         Factory f2 = new FactoryImpl();
         Manufacturer m = new Manufacturer("Volkswagen");
-        assert(m.addFactory(f1));
-        assert(m.addFactory(f2));
+        assert (m.addFactory(f1));
+        assert (m.addFactory(f2));
     }
     
     //This tests the methods setFactories and getFactories under Manufacturer class
     @Test
     public void testManufacturerSetGetFactories() {
         Factory f = new FactoryImpl();
-        ArrayList<Factory> fList = new ArrayList<Factory>();
-        fList.add(f);
+        ArrayList<Factory> list = new ArrayList<Factory>();
+        list.add(f);
         Manufacturer m = new Manufacturer("Volkswagen",f);
-        m.setFactories(fList);
-        assert(m.getFactories() == fList);
+        m.setFactories(list);
+        assert (m.getFactories() == list);
     }
     
     //This tests the methods FactoryImpl.numCarsMade method
     @Test
     public void testFactoryImplNumCarsMade() {
         Factory f = new FactoryImpl();
-        assert(f.numCarsMade() == 10);
+        assert (f.numCarsMade() == 10);
     }
     
     //This tests the methods FactoryImpl.costPerCar method
     @Test
     public void testFactoryImplCostPerCar() {
         Factory f = new FactoryImpl();
-        assert(f.costPerCar() == 5.0);
+        assert (f.costPerCar() == 5.0);
     }
     
     //This tests the methods set and getManufacturer in FactoryImpl class
@@ -72,7 +70,7 @@ public class Assignment5Tests {
         FactoryImpl f = new FactoryImpl();
         Manufacturer m = new Manufacturer("BMW");
         f.setManufacturer(m);
-        assert(f.getManufacturer() == m);
+        assert (f.getManufacturer() == m);
     }
     
     //This tests the methods of TruckSpeedupDecorator
@@ -80,8 +78,8 @@ public class Assignment5Tests {
     public void testTruckSpeedupDecorator() {
         Factory f = new FactoryImpl();
         FactoryDecorator fd = new FactoryDecorator(new TruckSpeedupDecorator(f));
-        assert(fd.costPerCar() == 5.0);
-        assert(fd.numCarsMade() == 17);
+        assert (fd.costPerCar() == 5.0);
+        assert (fd.numCarsMade() == 17);
     }
     
     //This tests the methods of SportsCarSpeedupDecorator
@@ -89,8 +87,8 @@ public class Assignment5Tests {
     public void testSportsCarSpeedupDecorator() {
         Factory f = new FactoryImpl();
         FactoryDecorator fd = new FactoryDecorator(new SportsCarSpeedupDecorator(f));
-        assert(fd.costPerCar() == 5.0);
-        assert(fd.numCarsMade() == 15);
+        assert (fd.costPerCar() == 5.0);
+        assert (fd.numCarsMade() == 15);
     }
     
     //This tests the methods of HybridSpeedupDecorator
@@ -98,7 +96,7 @@ public class Assignment5Tests {
     public void testHybridSpeedupDecorator() {
         Factory f = new FactoryImpl();
         FactoryDecorator fd = new FactoryDecorator(new HybridSpeedupDecorator(f));
-        assert(fd.costPerCar() == 5.0);
-        assert(fd.numCarsMade() == 18);
+        assert (fd.costPerCar() == 5.0);
+        assert (fd.numCarsMade() == 18);
     }
 }
