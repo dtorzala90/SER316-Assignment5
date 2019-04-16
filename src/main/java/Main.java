@@ -9,8 +9,16 @@ public class Main {
      * Main method for testing the code in a runtime environment.
      */
     public static void main(String[] args)throws Exception {
+        
+        // Create a Factory without any trade:
+        FactoryImpl basicFactory = new FactoryImpl();
+        System.out.println("Here is how many cars this factory would make "
+                + "without the decorator: " + basicFactory.numCarsMade());
+        
+        // Wrap the factory in the decorator (or trade):
         FactoryDecorator decoratedFactory = new FactoryDecorator(
-                new TruckSpeedupDecorator(new FactoryImpl()));
-        System.out.println(decoratedFactory.numCarsMade());
+                new TruckSpeedupDecorator(basicFactory));
+        System.out.println("Here is how many cars this factory would make "
+                + "with the decorator: " + decoratedFactory.numCarsMade());
     }
 }

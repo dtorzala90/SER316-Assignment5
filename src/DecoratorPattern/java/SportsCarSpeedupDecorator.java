@@ -12,7 +12,7 @@ public class SportsCarSpeedupDecorator extends FactoryDecorator {
     }
     
     private int calculateNumCarsMade(int num) {
-        return (int) Math.floor(num * 1.7);
+        return (int) Math.floor(num * 1.5);
     }
     
 }
