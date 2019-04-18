@@ -32,6 +32,12 @@ public class Manufacturer {
         }
     }
 
+    public void makeCars() {
+    	for (Factory f : factories) {
+    		f.makeCars();
+    	}
+    }
+    
     public ArrayList<Factory> getFactories() {
         return factories;
     }
