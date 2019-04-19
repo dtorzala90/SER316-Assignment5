@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args)throws Exception {
         
         // Create a Factory without any trade:
-        FactoryImpl basicFactory = new FactoryImpl();
+        FactoryImpl basicFactory = new FactoryImpl("Sports Cars");
         System.out.println("Here is how many cars this factory would make "
                 + "without the decorator: " + basicFactory.numCarsMade());
         
@@ -20,5 +20,11 @@ public class Main {
                 new TruckSpeedupDecorator(basicFactory));
         System.out.println("Here is how many cars this factory would make "
                 + "with the decorator: " + decoratedFactory.numCarsMade());
+        
+        Manufacturer m = new Manufacturer("BMW",decoratedFactory);
+        m.makeCars();
+        m.printManufacturerData();
+        m.makeCars();
+        m.printManufacturerData();
     }
 }

@@ -1,5 +1,7 @@
 package DecoratorPattern.java;
 
+import java.util.HashMap;
+
 public class FactoryDecorator implements Factory {
     private Factory factory;
     
@@ -16,5 +18,15 @@ public class FactoryDecorator implements Factory {
     public double costPerCar() {
         return factory.costPerCar();
     }
+
+	@Override
+	public HashMap<String, Integer> makeCars() {
+		return factory.makeCars();
+	}
+
+	@Override
+	public String getTypeCarsMade() {
+		return factory.getTypeCarsMade();
+	}
 
 }

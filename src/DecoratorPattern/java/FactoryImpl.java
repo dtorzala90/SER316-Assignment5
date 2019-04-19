@@ -1,20 +1,24 @@
 package DecoratorPattern.java;
 
-import java.text.DecimalFormat;
+import java.util.HashMap;
 
 import main.java.Manufacturer;
 
 public class FactoryImpl implements Factory {
+	private String typeCarsMade;
     private Manufacturer manufacturer;
     
-    public void makeCars() {
-    	DecimalFormat df = new DecimalFormat("#.00"); 
-    	System.out.println("The number of cars this factory made: " 
-    			+ numCarsMade() + " at $" + df.format(costPerCar()));
+    public FactoryImpl(String typeCarsMade) {
+    	this.typeCarsMade = typeCarsMade;
     }
     
-    
-    @Override
+    public HashMap<String, Integer> makeCars() {
+    	HashMap<String, Integer> inventoryReturn = new HashMap<String, Integer>();
+    	inventoryReturn.put(getTypeCarsMade(), numCarsMade());
+    	return inventoryReturn;
+    }
+
+	@Override
     public int numCarsMade() {
         return 10;
     }
@@ -23,6 +27,15 @@ public class FactoryImpl implements Factory {
     public double costPerCar() {
         return 5.0;
     }
+    
+    
+    public String getTypeCarsMade() {
+		return typeCarsMade;
+	}
+
+	public void setTypeCarsMade(String typeCarsMade) {
+		this.typeCarsMade = typeCarsMade;
+	}
     
     public Manufacturer getManufacturer() {
         return manufacturer;
