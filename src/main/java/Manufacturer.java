@@ -1,14 +1,16 @@
 package main.java;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import DecoratorPattern.java.Factory;
 
 public class Manufacturer {
     private String name;
     private ArrayList<Factory> factories;
-    
-    public Manufacturer(String pname, Factory pfactory) {
+    private HashMap<String,Integer> inventory;
+
+	public Manufacturer(String pname, Factory pfactory) {
         this.name = pname;
         this.addFactory(pfactory);
     }
@@ -37,6 +39,14 @@ public class Manufacturer {
     		f.makeCars();
     	}
     }
+    
+    public HashMap<String, Integer> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(HashMap<String, Integer> inventory) {
+		this.inventory = inventory;
+	}
     
     public ArrayList<Factory> getFactories() {
         return factories;
