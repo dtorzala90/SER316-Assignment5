@@ -1,8 +1,9 @@
-package decoratorPattern.java;
+package decoratorAndFactoryPattern.java;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
-import main.java.Manufacturer;
+import mediatorPattern.Manufacturer;
 
 public class FactoryImpl implements Factory {
 	private String typeCarsMade;
@@ -14,12 +15,31 @@ public class FactoryImpl implements Factory {
     	this.baseCost = baseCost;
     }
     
-    public HashMap<String, Integer> makeCars() {
-    	HashMap<String, Integer> inventoryReturn = new HashMap<String, Integer>();
-    	inventoryReturn.put(getTypeCarsMade(), numCarsMade());
-    	return inventoryReturn;
+    public ArrayList<Car> makeCars(int numToMake) {
+    	ArrayList<Car> carList = new ArrayList<Car>();
+    	for(int i = 0; i < numToMake; i++) {
+    		carList.add(getCar(typeCarsMade));
+    	}
+    	return carList;
     }
 
+    public Car getCar(String carType){
+        if(carType == null){
+           return null;
+        }		
+        if(carType.equalsIgnoreCase("Sports Car")){
+           return new SportsCar();
+           
+        } else if(carType.equalsIgnoreCase("Hybrid Car")){
+           return new HybridCar();
+           
+        } else if(carType.equalsIgnoreCase("Truck")){
+           return new Truck();
+        }
+        
+        return null;
+     }
+    
 	@Override
     public int numCarsMade() {
         return 10;

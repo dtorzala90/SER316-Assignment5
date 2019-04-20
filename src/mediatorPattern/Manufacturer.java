@@ -1,10 +1,10 @@
-package main.java;
+package mediatorPattern;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import decoratorPattern.java.Factory;
+import decoratorAndFactoryPattern.java.Factory;
 
 public class Manufacturer {
     private String name;

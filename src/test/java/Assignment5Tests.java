@@ -1,18 +1,17 @@
 package test.java;
 
-import main.java.Manufacturer;
-
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import decoratorPattern.java.Factory;
-import decoratorPattern.java.FactoryDecorator;
-import decoratorPattern.java.FactoryImpl;
-import decoratorPattern.java.HybridSpeedupDecorator;
-import decoratorPattern.java.SportsCarSpeedupDecorator;
-import decoratorPattern.java.TruckSpeedupDecorator;
+import decoratorAndFactoryPattern.java.Factory;
+import decoratorAndFactoryPattern.java.FactoryDecorator;
+import decoratorAndFactoryPattern.java.FactoryImpl;
+import decoratorAndFactoryPattern.java.HybridSpeedupDecorator;
+import decoratorAndFactoryPattern.java.SportsCarSpeedupDecorator;
+import decoratorAndFactoryPattern.java.TruckSpeedupDecorator;
+import mediatorPattern.Manufacturer;
 
 public class Assignment5Tests {
     Factory thisFactory;

@@ -2,8 +2,6 @@ package mediatorPattern;
 
 import java.util.ArrayList;
 
-import main.java.Manufacturer;
-
 public class ManufacturerMediator implements Mediator {
 
 	private ArrayList<Manufacturer> manufacturers;

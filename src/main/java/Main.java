@@ -1,8 +1,9 @@
 package main.java;
 
-import decoratorPattern.java.FactoryDecorator;
-import decoratorPattern.java.FactoryImpl;
-import decoratorPattern.java.TruckSpeedupDecorator;
+import decoratorAndFactoryPattern.java.FactoryDecorator;
+import decoratorAndFactoryPattern.java.FactoryImpl;
+import decoratorAndFactoryPattern.java.TruckSpeedupDecorator;
+import mediatorPattern.Manufacturer;
 import mediatorPattern.ManufacturerMediator;
 
 public class Main {

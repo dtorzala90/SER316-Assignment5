@@ -1,8 +1,8 @@
-package decoratorPattern.java;
+package decoratorAndFactoryPattern.java;
 
-public class HybridSpeedupDecorator extends FactoryDecorator {
-    
-    public HybridSpeedupDecorator(Factory factory) {
+public class TruckSpeedupDecorator extends FactoryDecorator {
+
+    public TruckSpeedupDecorator(Factory factory) {
         super(factory);
     }
     

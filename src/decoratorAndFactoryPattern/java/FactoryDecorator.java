@@ -1,5 +1,6 @@
-package decoratorPattern.java;
+package decoratorAndFactoryPattern.java;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class FactoryDecorator implements Factory {
@@ -20,8 +21,8 @@ public class FactoryDecorator implements Factory {
     }
 
 	@Override
-	public HashMap<String, Integer> makeCars() {
-		return factory.makeCars();
+	public ArrayList<Car> makeCars(int numToMake) {
+		return factory.makeCars(numToMake);
 	}
 
 	@Override

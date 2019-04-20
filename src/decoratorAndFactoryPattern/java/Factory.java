@@ -1,11 +1,11 @@
-package decoratorPattern.java;
+package decoratorAndFactoryPattern.java;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public interface Factory {
     int numCarsMade();
     
-    HashMap<String, Integer> makeCars();
+    ArrayList<Car> makeCars(int numToMake);
     
     String getTypeCarsMade();
     
