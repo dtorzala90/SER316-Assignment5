@@ -3,7 +3,7 @@ package main.java;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import DecoratorPattern.java.Factory;
+import decoratorPattern.java.Factory;
 
 public class Manufacturer {
     private String name;
@@ -12,14 +12,12 @@ public class Manufacturer {
     private double totalMoney;
     private double totalValue;
 
-	public Manufacturer(String pname, Factory pfactory) {
+	public Manufacturer(String pname, Factory pfactory, double startMoney, double startValue) {
         this.name = pname;
+        this.totalMoney = startMoney;
+        this.totalValue = startValue;
         this.addFactory(pfactory);
         initiateInventory();
-    }
-    
-    public Manufacturer(String pname) {
-        this.name = pname;
     }
 
     public boolean addFactory(Factory pfactory) {
@@ -38,12 +36,14 @@ public class Manufacturer {
     }
 
     public void makeCars() {
-    	//HashMap<String,Integer> inventoryToAdd = new HashMap<String,Integer>();
     	for (Factory f : factories) {
-    		//inventoryToAdd = f.makeCars();
-    		//Integer num = inventoryToAdd.get(f.getTypeCarsMade());
     		int num = f.numCarsMade();
-    		inventory.put(f.getTypeCarsMade(), (Integer)(inventory.get(f.getTypeCarsMade()) + num));
+    		int ogNum = inventory.get(f.getTypeCarsMade());
+    		inventory.put(f.getTypeCarsMade(), ogNum + num);
+    		double costOfMakingCars = num * f.costPerCar();
+    		double valueFromMakingCars = num * f.valueOfCar();
+    		totalMoney -= costOfMakingCars;
+    		totalValue += valueFromMakingCars;
     	}
     }
     

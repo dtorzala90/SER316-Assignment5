@@ -6,5 +6,9 @@ public interface Mediator {
 
 	public void makeCars();
 	
-	public void buyManufacturer(Manufacturer m);
+	public void buyManufacturer(Manufacturer buyer, Manufacturer seller);
+	
+	public void run();
+	
+	public void addManufacturer(Manufacturer m);
 }

@@ -1,4 +1,4 @@
-package DecoratorPattern.java;
+package decoratorPattern.java;
 
 import java.util.HashMap;
 
@@ -7,9 +7,11 @@ import main.java.Manufacturer;
 public class FactoryImpl implements Factory {
 	private String typeCarsMade;
     private Manufacturer manufacturer;
+    private double baseCost;
     
-    public FactoryImpl(String typeCarsMade) {
+	public FactoryImpl(String typeCarsMade, double baseCost) {
     	this.typeCarsMade = typeCarsMade;
+    	this.baseCost = baseCost;
     }
     
     public HashMap<String, Integer> makeCars() {
@@ -27,7 +29,19 @@ public class FactoryImpl implements Factory {
     public double costPerCar() {
         return 5.0;
     }
+
+	@Override
+	public double valueOfCar() {
+		return baseCost * 1.5;
+	}
     
+    public double getBaseCost() {
+		return baseCost;
+	}
+
+	public void setBaseCost(double baseCost) {
+		this.baseCost = baseCost;
+	}
     
     public String getTypeCarsMade() {
 		return typeCarsMade;

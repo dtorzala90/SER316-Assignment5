@@ -1,8 +1,8 @@
-package DecoratorPattern.java;
+package decoratorPattern.java;
 
-public class TruckSpeedupDecorator extends FactoryDecorator {
-
-    public TruckSpeedupDecorator(Factory factory) {
+public class SportsCarSpeedupDecorator extends FactoryDecorator {
+    
+    public SportsCarSpeedupDecorator(Factory factory) {
         super(factory);
     }
     
@@ -12,6 +12,7 @@ public class TruckSpeedupDecorator extends FactoryDecorator {
     }
     
     private int calculateNumCarsMade(int num) {
-        return (int) Math.floor(num * 1.7);
+        return (int) Math.floor(num * 1.5);
     }
+    
 }

@@ -1,4 +1,4 @@
-package DecoratorPattern.java;
+package decoratorPattern.java;
 
 import java.util.HashMap;
 
@@ -27,6 +27,11 @@ public class FactoryDecorator implements Factory {
 	@Override
 	public String getTypeCarsMade() {
 		return factory.getTypeCarsMade();
+	}
+
+	@Override
+	public double valueOfCar() {
+		return factory.valueOfCar();
 	}
 
 }

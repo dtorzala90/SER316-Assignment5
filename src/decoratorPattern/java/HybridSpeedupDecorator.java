@@ -1,4 +1,4 @@
-package DecoratorPattern.java;
+package decoratorPattern.java;
 
 public class HybridSpeedupDecorator extends FactoryDecorator {
     

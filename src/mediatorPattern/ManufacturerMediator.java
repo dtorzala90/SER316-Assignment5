@@ -20,11 +20,34 @@ public class ManufacturerMediator implements Mediator {
 		}
 		
 	}
+	
+	
 
 	@Override
-	public void buyManufacturer(Manufacturer m) {
+	public void buyManufacturer(Manufacturer buyer, Manufacturer seller) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void run() {
+		while (manufacturers.size() > 1) {
+			try {
+				wait(100);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			makeCars();
+		}
+		
+	}
+
+	@Override
+	public void addManufacturer(Manufacturer m) {
+		manufacturers.add(m);
+	}
+	
+	
 
 }

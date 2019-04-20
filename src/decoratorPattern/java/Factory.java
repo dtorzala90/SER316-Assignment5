@@ -1,4 +1,4 @@
-package DecoratorPattern.java;
+package decoratorPattern.java;
 
 import java.util.HashMap;
 
@@ -10,4 +10,6 @@ public interface Factory {
     String getTypeCarsMade();
     
     double costPerCar();
+    
+    double valueOfCar();
 }
