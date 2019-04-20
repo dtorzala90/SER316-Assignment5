@@ -11,4 +11,6 @@ public interface Mediator {
 	public void run();
 	
 	public void addManufacturer(Manufacturer m);
+	
+	public void printManufacturers();
 }

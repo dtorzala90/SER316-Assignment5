@@ -21,7 +21,13 @@ public class ManufacturerMediator implements Mediator {
 		
 	}
 	
-	
+	@Override
+	public void printManufacturers() {
+		for (Manufacturer m : manufacturers) {
+			m.printManufacturerData();
+		}
+		
+	}
 
 	@Override
 	public void buyManufacturer(Manufacturer buyer, Manufacturer seller) {
@@ -33,14 +39,15 @@ public class ManufacturerMediator implements Mediator {
 	public void run() {
 		while (manufacturers.size() > 1) {
 			try {
-				wait(100);
+				Thread.sleep(1000);
+				makeCars();
+				printManufacturers();
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			makeCars();
+			
 		}
-		
 	}
 
 	@Override

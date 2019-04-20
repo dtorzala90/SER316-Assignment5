@@ -22,8 +22,8 @@ public class Main {
                 + "with the decorator: " + decoratedFactory.numCarsMade());
         
         Manufacturer m1 = new Manufacturer("BMW",decoratedFactory, 100000, 20000000);
-        Manufacturer m2 = new Manufacturer("Volkswagen",decoratedFactory, 100000, 20000000);
-        Manufacturer m3 = new Manufacturer("Ford",decoratedFactory, 100000, 20000000);
+        Manufacturer m2 = new Manufacturer("Volkswagen",decoratedFactory, 7000, 15000000);
+        Manufacturer m3 = new Manufacturer("Ford",decoratedFactory, 5000, 10000000);
         ManufacturerMediator manMed = new ManufacturerMediator();
         manMed.addManufacturer(m1);
         manMed.addManufacturer(m2);

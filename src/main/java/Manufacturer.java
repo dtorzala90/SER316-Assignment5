@@ -1,5 +1,6 @@
 package main.java;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -55,10 +56,15 @@ public class Manufacturer {
     }
     
     public void printManufacturerData() {
-    	System.out.println("***********************\n\t" + this.name 
-    			+ "\n***********************\nType of Car\tAmount\nSports Cars\t" 
-    			+ inventory.get("Sports Cars") + "\nTrucks\t\t" + inventory.get("Trucks") +
-    			"\nHybrid Cars\t" + inventory.get("Hybrid Cars") + "\n\n");
+        DecimalFormat df = new DecimalFormat("#.00");
+    	System.out.println("***********************\n"
+    			+ "\t" + this.name 
+    			+ "\n***********************\n"
+    			+ "Type of Car\tAmount\nSports Cars\t" + inventory.get("Sports Cars") + "\n"
+    			+ "Trucks\t\t" + inventory.get("Trucks") + "\n"
+    			+ "Hybrid Cars\t" + inventory.get("Hybrid Cars") + "\n"
+    			+ "Total Money: " + "\t$" + df.format(totalMoney) + "\n"
+    			+ "Total Value: " + "\t$" + df.format(totalValue) + "\n\n");
     }
     
     public double getTotalValue() {
