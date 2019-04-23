@@ -47,6 +47,7 @@ public class ManufacturerMediator implements Mediator {
 	    if (wealthiest != cheapest && wealthiest.getTotalMoney() > cheapest.getTotalValue()) {
 	        manufacturerBuysManufacturer(wealthiest, cheapest);
 	        System.out.println("Manufacturer: " + wealthiest.getName() + "just bought out " + cheapest.getName() + "!!");
+	        manufacturers.remove(cheapest);
 	    }
 		
 	}
