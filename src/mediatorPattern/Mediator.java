@@ -1,7 +1,6 @@
 package mediatorPattern;
 
-import main.java.*;
-
+//Interface for implementing the ManufacturerMediator object
 public interface Mediator {
 
 	public void makeCars();

@@ -1,7 +1,6 @@
 package decoratorAndFactoryPattern.java;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 // This is the generic Factory Decorator. The methods are for implementation 
 // in the other decorator classes
