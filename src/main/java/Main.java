@@ -34,7 +34,7 @@ public class Main {
         m1.addFactory(cheaperSCFactory);
         Manufacturer m2 = new Manufacturer("Volkswagen",cheaperHFactory, 700000, 15000000);
         m2.addFactory(spedUpHFactory);
-        Manufacturer m3 = new Manufacturer("Ford",cheaperTFactory, 500000, 100000);
+        Manufacturer m3 = new Manufacturer("Ford",cheaperTFactory, 5000000, 1000000);
         ManufacturerMediator manMed = new ManufacturerMediator();
         manMed.addManufacturer(m1);
         manMed.addManufacturer(m2);

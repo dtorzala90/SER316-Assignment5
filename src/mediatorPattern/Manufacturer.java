@@ -42,19 +42,19 @@ public class Manufacturer {
 		double costOfSellingCars = 0;
 		double valueFromSellingCars = 0;
 		if (totalNumCars > 100) {
-		    int numSold = (int)(inventory.get("Sports Cars").size() * (Math.random() * (1.1) + .2));
+		    int numSold = (int)(inventory.get("Sports Cars").size() * (Math.random() * (.8) + .2));
 		    for (int i = 0; i < numSold; i++) {
-		        costOfSellingCars += inventory.get("Sports Cars").get(i).getBaseCost() * .05;
-		        valueFromSellingCars += inventory.get("Sports Cars").get(i).getBaseCost();
-		        inventory.get("Sports Cars").remove(i);
+		        costOfSellingCars += inventory.get("Sports Cars").get(0).getBaseCost() * .05;
+		        valueFromSellingCars += inventory.get("Sports Cars").get(0).getBaseCost();
+		        inventory.get("Sports Cars").remove(0);
 		    }
-            numSold = (int)(inventory.get("Trucks").size() * (Math.random() * (1.1) + .2));
+            numSold = (int)(inventory.get("Trucks").size() * (Math.random() * (.8) + .2));
             for (int i = 0; i < numSold; i++) {
                 costOfSellingCars += inventory.get("Trucks").get(0).getBaseCost() * .05;
                 valueFromSellingCars += inventory.get("Trucks").get(0).getBaseCost();
                 inventory.get("Trucks").remove(0);
             }
-            numSold = (int)(inventory.get("Hybrid Cars").size() * (Math.random() * (1.1) + .2));
+            numSold = (int)(inventory.get("Hybrid Cars").size() * (Math.random() * (.8) + .2));
             for (int i = 0; i < numSold; i++) {
                 costOfSellingCars += inventory.get("Hybrid Cars").get(0).getBaseCost() * .05;
                 valueFromSellingCars += inventory.get("Hybrid Cars").get(0).getBaseCost();
@@ -72,7 +72,7 @@ public class Manufacturer {
             ArrayList<Car> carsToAdd = f.makeCars(num);
             for (Car c: carsToAdd) {
                 inventory.get(f.getTypeCarsMade()).add(c);
-                System.out.print("Just made a " + f.getTypeCarsMade());
+                //System.out.print("Just made a " + f.getTypeCarsMade() + " for " + c.getBaseCost() + "!! ");
             }
             System.out.print("\n");
             double costOfMakingCars = num * f.costPerCar();

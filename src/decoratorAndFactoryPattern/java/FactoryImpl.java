@@ -18,22 +18,22 @@ public class FactoryImpl implements Factory {
     public ArrayList<Car> makeCars(int numToMake) {
     	ArrayList<Car> carList = new ArrayList<Car>();
     	for(int i = 0; i < numToMake; i++) {
-    		carList.add(getCar(typeCarsMade));
+    		carList.add(getCar());
     	}
     	return carList;
     }
 
-    public Car getCar(String carType){
-        if(carType == null){
+    public Car getCar(){
+        if(typeCarsMade == null){
            return null;
         }		
-        if(carType.equalsIgnoreCase("Sports Car")){
+        if(typeCarsMade.equalsIgnoreCase("Sports Cars")){
            return new SportsCar(baseCost);
            
-        } else if(carType.equalsIgnoreCase("Hybrid Car")){
+        } else if(typeCarsMade.equalsIgnoreCase("Hybrid Cars")){
            return new HybridCar(baseCost);
            
-        } else if(carType.equalsIgnoreCase("Truck")){
+        } else if(typeCarsMade.equalsIgnoreCase("Trucks")){
            return new Truck(baseCost);
         }
         
