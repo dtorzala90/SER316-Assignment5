@@ -47,7 +47,7 @@ public class FactoryImpl implements Factory {
     
     @Override
     public double costPerCar() {
-        return 5.0;
+        return baseCost * .1;
     }
 
 	@Override

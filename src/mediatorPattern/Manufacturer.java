@@ -38,27 +38,27 @@ public class Manufacturer {
     }
 
     public void sellCars() {
-		int totalNumCars = inventory.get("Sports Cars").size() + inventory.get("Trucks").size() + inventory.get("Hybrids").size();
+		int totalNumCars = inventory.get("Sports Cars").size() + inventory.get("Trucks").size() + inventory.get("Hybrid Cars").size();
 		double costOfSellingCars = 0;
 		double valueFromSellingCars = 0;
-		if (totalNumCars > 10000) {
+		if (totalNumCars > 100) {
 		    int numSold = (int)(inventory.get("Sports Cars").size() * (Math.random() * (1.1) + .2));
 		    for (int i = 0; i < numSold; i++) {
-		        costOfSellingCars += inventory.get("Sports Cars").get(0).getBaseCost() * .1;
-		        valueFromSellingCars += inventory.get("Sports Cars").get(0).getBaseCost();
-		        inventory.get("Sports Cars").remove(0);
+		        costOfSellingCars += inventory.get("Sports Cars").get(i).getBaseCost() * .05;
+		        valueFromSellingCars += inventory.get("Sports Cars").get(i).getBaseCost();
+		        inventory.get("Sports Cars").remove(i);
 		    }
             numSold = (int)(inventory.get("Trucks").size() * (Math.random() * (1.1) + .2));
             for (int i = 0; i < numSold; i++) {
-                costOfSellingCars += inventory.get("Sports Cars").get(0).getBaseCost() * .1;
-                valueFromSellingCars += inventory.get("Sports Cars").get(0).getBaseCost();
-                inventory.get("Sports Cars").remove(0);
+                costOfSellingCars += inventory.get("Trucks").get(0).getBaseCost() * .05;
+                valueFromSellingCars += inventory.get("Trucks").get(0).getBaseCost();
+                inventory.get("Trucks").remove(0);
             }
-            numSold = (int)(inventory.get("Hybrids").size() * (Math.random() * (1.1) + .2));
+            numSold = (int)(inventory.get("Hybrid Cars").size() * (Math.random() * (1.1) + .2));
             for (int i = 0; i < numSold; i++) {
-                costOfSellingCars += inventory.get("Sports Cars").get(0).getBaseCost() * .1;
-                valueFromSellingCars += inventory.get("Sports Cars").get(0).getBaseCost();
-                inventory.get("Sports Cars").remove(0);
+                costOfSellingCars += inventory.get("Hybrid Cars").get(0).getBaseCost() * .05;
+                valueFromSellingCars += inventory.get("Hybrid Cars").get(0).getBaseCost();
+                inventory.get("Hybrid Cars").remove(0);
             }
 		}
 		totalMoney += valueFromSellingCars;
@@ -69,8 +69,12 @@ public class Manufacturer {
     public void makeCars() {
         for (Factory f : factories) {
             int num = f.numCarsMade();
-            int ogNum = inventory.get(f.getTypeCarsMade()).size();
-            inventory.put(f.getTypeCarsMade(), ogNum + num);
+            ArrayList<Car> carsToAdd = f.makeCars(num);
+            for (Car c: carsToAdd) {
+                inventory.get(f.getTypeCarsMade()).add(c);
+                System.out.print("Just made a " + f.getTypeCarsMade());
+            }
+            System.out.print("\n");
             double costOfMakingCars = num * f.costPerCar();
             double valueFromMakingCars = num * f.valueOfCar();
             totalMoney -= costOfMakingCars;

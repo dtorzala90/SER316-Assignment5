@@ -62,8 +62,9 @@ public class ManufacturerMediator implements Mediator {
 	public void run() {
 		while (manufacturers.size() > 1) {
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(100);
 				makeCars();
+				sellCars();
 				sellAndBuyManufacturer();
 				printManufacturers();
 			} catch (InterruptedException e) {
