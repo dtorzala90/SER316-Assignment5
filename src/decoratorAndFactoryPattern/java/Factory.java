@@ -2,6 +2,7 @@ package decoratorAndFactoryPattern.java;
 
 import java.util.ArrayList;
 
+// Interface for creating a Factory object
 public interface Factory {
     int numCarsMade();
     

@@ -1,5 +1,7 @@
 package decoratorAndFactoryPattern.java;
 
+//This is a decorator for making a factory produce Sports Cars cars for 70% of original cost
+//when it wraps a factory object
 public class SportsCarCheaperDecorator extends FactoryDecorator {
     
     public SportsCarCheaperDecorator(Factory factory) {

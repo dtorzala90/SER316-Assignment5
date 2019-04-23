@@ -1,5 +1,7 @@
 package decoratorAndFactoryPattern.java;
 
+// HybridCar is a basic implementation of the interface Car. It could be further specified
+// according to real world stats
 public class HybridCar implements Car {
     private double baseCost;
     
