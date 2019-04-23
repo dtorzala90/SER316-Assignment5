@@ -13,18 +13,23 @@ public class Main {
     public static void main(String[] args)throws Exception {
         
         // Create a Factory without any trade:
-        FactoryImpl basicFactory = new FactoryImpl("Sports Cars", 10000);
-        System.out.println("Here is how many cars this factory would make "
-                + "without the decorator: " + basicFactory.numCarsMade());
+        FactoryImpl basicSCFactory = new FactoryImpl("Sports Cars", 50000);
+        FactoryImpl basicTFactory = new FactoryImpl("Trucks", 32000);
+        FactoryImpl basicHFactory = new FactoryImpl("Hybrid Cars", 20000);
         
         // Wrap the factory in the decorator (or trade):
-        FactoryDecorator decoratedFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicFactory));
-        System.out.println("Here is how many cars this factory would make "
-                + "with the decorator: " + decoratedFactory.numCarsMade());
+        FactoryDecorator spedUpTFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicTFactory));
+        FactoryDecorator spedUpSCFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicSCFactory));
+        FactoryDecorator spedUpHFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicHFactory));
+        FactoryDecorator cheaperTFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicTFactory));
+        FactoryDecorator cheaperSCFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicSCFactory));
+        FactoryDecorator cheaperHFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicHFactory));
         
-        Manufacturer m1 = new Manufacturer("BMW",decoratedFactory, 100000, 20000000);
-        Manufacturer m2 = new Manufacturer("Volkswagen",decoratedFactory, 7000, 15000000);
-        Manufacturer m3 = new Manufacturer("Ford",decoratedFactory, 5000, 10000000);
+        Manufacturer m1 = new Manufacturer("BMW",spedUpTFactory, 100000, 20000000);
+        m1.addFactory(cheaperSCFactory);
+        Manufacturer m2 = new Manufacturer("Volkswagen",cheaperHFactory, 7000, 15000000);
+        m2.addFactory(spedUpHFactory);
+        Manufacturer m3 = new Manufacturer("Ford",cheaperTFactory, 5000, 100000);
         ManufacturerMediator manMed = new ManufacturerMediator();
         manMed.addManufacturer(m1);
         manMed.addManufacturer(m2);

@@ -1,11 +1,23 @@
 package decoratorAndFactoryPattern.java;
 
 public class Truck implements Car {
+    private double baseCost;
+    
+    public Truck(double baseCost) {
+        this.baseCost = baseCost;
+    }
+    
+    @Override
+    public void makeCar() {
+        
+    }
 
-	@Override
-	public void makeCar() {
-		// TODO Auto-generated method stub
-		
-	}
+    public double getBaseCost() {
+        return baseCost;
+    }
+
+    public void setBaseCost(double baseCost) {
+        this.baseCost = baseCost;
+    }
 
 }

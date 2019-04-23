@@ -28,13 +28,13 @@ public class FactoryImpl implements Factory {
            return null;
         }		
         if(carType.equalsIgnoreCase("Sports Car")){
-           return new SportsCar();
+           return new SportsCar(baseCost);
            
         } else if(carType.equalsIgnoreCase("Hybrid Car")){
-           return new HybridCar();
+           return new HybridCar(baseCost);
            
         } else if(carType.equalsIgnoreCase("Truck")){
-           return new Truck();
+           return new Truck(baseCost);
         }
         
         return null;
