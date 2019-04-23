@@ -16,7 +16,7 @@ public class Main {
         
         // Wrap the factory in the decorator (or trade):
         FactoryDecorator spedUpTFactory = new FactoryDecorator(new TruckSpeedupDecorator(basicTFactory));
-        FactoryDecorator spedUpSCFactory = new FactoryDecorator(new SportsCarSpeedupDecorator(basicSCFactory));
+        //FactoryDecorator spedUpSCFactory = new FactoryDecorator(new SportsCarSpeedupDecorator(basicSCFactory));
         FactoryDecorator spedUpHFactory = new FactoryDecorator(new HybridSpeedupDecorator(basicHFactory));
         FactoryDecorator cheaperTFactory = new FactoryDecorator(new TruckCheaperDecorator(basicTFactory));
         FactoryDecorator cheaperSCFactory = new FactoryDecorator(new SportsCarCheaperDecorator(basicSCFactory));
