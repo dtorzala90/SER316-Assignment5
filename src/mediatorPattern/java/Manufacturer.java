@@ -1,4 +1,4 @@
-package mediatorPattern;
+package mediatorPattern.java;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

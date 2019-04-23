@@ -1,15 +1,7 @@
 package main.java;
 
-import decoratorAndFactoryPattern.java.FactoryDecorator;
-import decoratorAndFactoryPattern.java.FactoryImpl;
-import decoratorAndFactoryPattern.java.HybridCheaperDecorator;
-import decoratorAndFactoryPattern.java.HybridSpeedupDecorator;
-import decoratorAndFactoryPattern.java.SportsCarCheaperDecorator;
-import decoratorAndFactoryPattern.java.SportsCarSpeedupDecorator;
-import decoratorAndFactoryPattern.java.TruckCheaperDecorator;
-import decoratorAndFactoryPattern.java.TruckSpeedupDecorator;
-import mediatorPattern.Manufacturer;
-import mediatorPattern.ManufacturerMediator;
+import decoratorAndFactoryPattern.java.*;
+import mediatorPattern.java.*;
 
 public class Main {
     /**
@@ -30,11 +22,11 @@ public class Main {
         FactoryDecorator cheaperSCFactory = new FactoryDecorator(new SportsCarCheaperDecorator(basicSCFactory));
         FactoryDecorator cheaperHFactory = new FactoryDecorator(new HybridCheaperDecorator(basicHFactory));
         
-        Manufacturer m1 = new Manufacturer("BMW",spedUpTFactory, 1000000, 20000000);
+        Manufacturer m1 = new Manufacturer("BMW",spedUpTFactory, 1000000.0, 20000000.0);
         m1.addFactory(cheaperSCFactory);
-        Manufacturer m2 = new Manufacturer("Volkswagen",cheaperHFactory, 700000, 15000000);
+        Manufacturer m2 = new Manufacturer("Volkswagen",cheaperHFactory, 700000.0, 15000000.0);
         m2.addFactory(spedUpHFactory);
-        Manufacturer m3 = new Manufacturer("Ford",cheaperTFactory, 5000000, 1000000);
+        Manufacturer m3 = new Manufacturer("Ford",cheaperTFactory, 5000000.0, 1000000.0);
         ManufacturerMediator manMed = new ManufacturerMediator();
         manMed.addManufacturer(m1);
         manMed.addManufacturer(m2);

@@ -1,4 +1,4 @@
-package mediatorPattern;
+package mediatorPattern.java;
 
 //Interface for implementing the ManufacturerMediator object
 public interface Mediator {
