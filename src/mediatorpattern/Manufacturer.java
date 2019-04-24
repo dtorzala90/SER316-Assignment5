@@ -1,12 +1,11 @@
 package mediatorpattern;
 
 import factorypattern.Car;
+import decoratorpattern.Factory;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import decoratorpattern.Factory;
 
 // Manufacturer is an object that simulates the actions and attributes of a manufacturer
 public class Manufacturer {

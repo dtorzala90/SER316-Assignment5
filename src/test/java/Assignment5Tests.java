@@ -18,11 +18,11 @@ import org.junit.Test;
 
 public class Assignment5Tests {
     Factory thisFactory;
-    
+
     @Before
     public void setUp() throws Exception {
     }
-    
+
     //This tests the methods setName and getName under Manufacturer class
     @Test
     public void testManufacturerSetGetName() {
@@ -31,7 +31,7 @@ public class Assignment5Tests {
         m.setName("Bob");
         assert (m.getName() == "Bob");
     }
-    
+
     //This tests the method addFactory under Manufacturer class
     @Test
     public void testManufacturerAddFactory() {
@@ -41,7 +41,7 @@ public class Assignment5Tests {
         assert (m.addFactory(f1));
         assert (m.addFactory(f2));
     }
-    
+
     //This tests the methods setFactories and getFactories under Manufacturer class
     @Test
     public void testManufacturerSetGetFactories() {
@@ -52,21 +52,21 @@ public class Assignment5Tests {
         m.setFactories(list);
         assert (m.getFactories() == list);
     }
-    
+
     //This tests the methods FactoryImpl.numCarsMade method
     @Test
     public void testFactoryImplNumCarsMade() {
         Factory f = new FactoryImpl("a", 10.0);
         assert (f.numCarsMade() == 10);
     }
-    
+
     //This tests the methods FactoryImpl.costPerCar method
     @Test
     public void testFactoryImplCostPerCar() {
         Factory f = new FactoryImpl("a", 10.0);
         assert (f.costPerCar() == 1.0);
     }
-    
+
     //This tests the methods set and getManufacturer in FactoryImpl class
     @Test
     public void testFactoryImplSetGetManufacturer() {
@@ -75,7 +75,7 @@ public class Assignment5Tests {
         f.setManufacturer(m);
         assert (f.getManufacturer() == m);
     }
-    
+
     //This tests the methods of TruckSpeedupDecorator
     @Test
     public void testTruckSpeedupDecorator() {
@@ -84,7 +84,7 @@ public class Assignment5Tests {
         assert (fd.costPerCar() == 1.0);
         assert (fd.numCarsMade() == 18);
     }
-    
+
     //This tests the methods of SportsCarSpeedupDecorator
     @Test
     public void testSportsCarSpeedupDecorator() {
@@ -93,7 +93,7 @@ public class Assignment5Tests {
         assert (fd.costPerCar() == 1.0);
         assert (fd.numCarsMade() == 15);
     }
-    
+
     //This tests the methods of HybridSpeedupDecorator
     @Test
     public void testHybridSpeedupDecorator() {
@@ -102,7 +102,7 @@ public class Assignment5Tests {
         assert (fd.costPerCar() == 1.0);
         assert (fd.numCarsMade() == 18);
     }
-    
+
     //This tests the methods of HybridCheaperDecorator
     @Test
     public void testHybridCheaperDecorator() {
@@ -110,16 +110,16 @@ public class Assignment5Tests {
         FactoryDecorator fd = new FactoryDecorator(new HybridCheaperDecorator(f));
         assert (fd.costPerCar() == 0.0);
     }
-    
-  //This tests the methods of SportsCarCheaperDecorator
+
+    //This tests the methods of SportsCarCheaperDecorator
     @Test
     public void testSportsCarCheaperDecorator() {
         Factory f = new FactoryImpl("Sports Cars", 10.0);
         FactoryDecorator fd = new FactoryDecorator(new SportsCarCheaperDecorator(f));
         assert (fd.costPerCar() == 0.0);
     }
-    
-  //This tests the methods of TruckCheaperDecorator
+
+    //This tests the methods of TruckCheaperDecorator
     @Test
     public void testTruckCheaperDecorator() {
         Factory f = new FactoryImpl("Hybrid Cars", 10.0);
