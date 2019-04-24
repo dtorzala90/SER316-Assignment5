@@ -1,8 +1,8 @@
 package decoratorpattern;
 
-import java.util.ArrayList;
-
 import factorypattern.Car;
+
+import java.util.ArrayList;
 
 // Interface for creating a Factory object
 public interface Factory {

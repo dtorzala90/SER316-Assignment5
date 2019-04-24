@@ -1,8 +1,8 @@
 package decoratorpattern;
 
-import java.util.ArrayList;
-
 import factorypattern.Car;
+
+import java.util.ArrayList;
 
 // This is the generic Factory Decorator. The methods are for implementation 
 // in the other decorator classes

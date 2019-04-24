@@ -1,12 +1,12 @@
 package decoratorpattern;
 
-import java.util.ArrayList;
-
 import factorypattern.Car;
 import factorypattern.HybridCar;
 import factorypattern.SportsCar;
 import factorypattern.Truck;
 import mediatorpattern.Manufacturer;
+
+import java.util.ArrayList;
 
 // A basic implementation of a factory object. This is the class that will be wrapped
 // by the appropriate decorators and also implements the factory design pattern in the getCar method
