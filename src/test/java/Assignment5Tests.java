@@ -1,17 +1,20 @@
 package test.java;
 
+import decoratorpattern.Factory;
+import decoratorpattern.FactoryDecorator;
+import decoratorpattern.FactoryImpl;
+import decoratorpattern.HybridCheaperDecorator;
+import decoratorpattern.HybridSpeedupDecorator;
+import decoratorpattern.SportsCarCheaperDecorator;
+import decoratorpattern.SportsCarSpeedupDecorator;
+import decoratorpattern.TruckCheaperDecorator;
+import decoratorpattern.TruckSpeedupDecorator;
+import mediatorpattern.Manufacturer;
+
 import java.util.ArrayList;
 
 import org.junit.Before;
 import org.junit.Test;
-
-import decoratorpattern.Factory;
-import decoratorpattern.FactoryDecorator;
-import decoratorpattern.FactoryImpl;
-import decoratorpattern.HybridSpeedupDecorator;
-import decoratorpattern.SportsCarSpeedupDecorator;
-import decoratorpattern.TruckSpeedupDecorator;
-import mediatorpattern.Manufacturer;
 
 public class Assignment5Tests {
     Factory thisFactory;
@@ -98,5 +101,29 @@ public class Assignment5Tests {
         FactoryDecorator fd = new FactoryDecorator(new HybridSpeedupDecorator(f));
         assert (fd.costPerCar() == 1.0);
         assert (fd.numCarsMade() == 18);
+    }
+    
+    //This tests the methods of HybridCheaperDecorator
+    @Test
+    public void testHybridCheaperDecorator() {
+        Factory f = new FactoryImpl("Hybrid Cars", 10.0);
+        FactoryDecorator fd = new FactoryDecorator(new HybridCheaperDecorator(f));
+        assert (fd.costPerCar() == 0.0);
+    }
+    
+  //This tests the methods of SportsCarCheaperDecorator
+    @Test
+    public void testSportsCarCheaperDecorator() {
+        Factory f = new FactoryImpl("Sports Cars", 10.0);
+        FactoryDecorator fd = new FactoryDecorator(new SportsCarCheaperDecorator(f));
+        assert (fd.costPerCar() == 0.0);
+    }
+    
+  //This tests the methods of TruckCheaperDecorator
+    @Test
+    public void testTruckCheaperDecorator() {
+        Factory f = new FactoryImpl("Hybrid Cars", 10.0);
+        FactoryDecorator fd = new FactoryDecorator(new TruckCheaperDecorator(f));
+        assert (fd.costPerCar() == 0.0);
     }
 }
