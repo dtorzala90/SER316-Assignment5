@@ -4,14 +4,14 @@ package decoratorAndFactoryPattern.java;
 //according to real world stats
 public class Truck implements Car {
     private double baseCost;
-    
+
     public Truck(double baseCost) {
         this.baseCost = baseCost;
     }
-    
+
     @Override
     public void makeCar() {
-        
+
     }
 
     public double getBaseCost() {

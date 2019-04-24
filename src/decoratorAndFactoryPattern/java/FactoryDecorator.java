@@ -6,7 +6,7 @@ import java.util.ArrayList;
 // in the other decorator classes
 public class FactoryDecorator implements Factory {
     private Factory factory;
-    
+
     public FactoryDecorator(Factory factory) {
         this.factory = factory;
     }
@@ -21,19 +21,19 @@ public class FactoryDecorator implements Factory {
         return factory.costPerCar();
     }
 
-	@Override
-	public ArrayList<Car> makeCars(int numToMake) {
-		return factory.makeCars(numToMake);
-	}
+    @Override
+    public ArrayList<Car> makeCars(int numToMake) {
+        return factory.makeCars(numToMake);
+    }
 
-	@Override
-	public String getTypeCarsMade() {
-		return factory.getTypeCarsMade();
-	}
+    @Override
+    public String getTypeCarsMade() {
+        return factory.getTypeCarsMade();
+    }
 
-	@Override
-	public double valueOfCar() {
-		return factory.valueOfCar();
-	}
+    @Override
+    public double valueOfCar() {
+        return factory.valueOfCar();
+    }
 
 }

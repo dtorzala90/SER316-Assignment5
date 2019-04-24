@@ -4,14 +4,14 @@ package decoratorAndFactoryPattern.java;
 // according to real world stats
 public class HybridCar implements Car {
     private double baseCost;
-    
+
     public HybridCar(double baseCost) {
         this.baseCost = baseCost;
     }
-    
+
     @Override
     public void makeCar() {
-        
+
     }
 
     public double getBaseCost() {
