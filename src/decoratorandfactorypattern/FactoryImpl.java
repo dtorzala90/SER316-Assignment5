@@ -39,7 +39,7 @@ public class FactoryImpl implements Factory {
     public Car getCar() {
         if (typeCarsMade == null) {
             return null;
-        }		
+        }
         if (typeCarsMade.equalsIgnoreCase("Sports Cars")) {
             return new SportsCar(baseCost);
 
