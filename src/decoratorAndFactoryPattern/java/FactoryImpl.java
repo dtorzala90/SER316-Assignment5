@@ -22,7 +22,7 @@ public class FactoryImpl implements Factory {
     // This method takes in the number of cars to be made and returns an array list of those objects
     public ArrayList<Car> makeCars(int numToMake) {
         ArrayList<Car> carList = new ArrayList<Car>();
-        for(int i = 0; i < numToMake; i++) {
+        for (int i = 0; i < numToMake; i++) {
             carList.add(getCar());
         }
         return carList;
@@ -31,16 +31,16 @@ public class FactoryImpl implements Factory {
     // This method is what implements the factory design pattern
     // by returning the correct Car object depending on the type of car needed
     public Car getCar(){
-        if(typeCarsMade == null){
+        if (typeCarsMade == null) {
             return null;
         }		
-        if(typeCarsMade.equalsIgnoreCase("Sports Cars")){
+        if (typeCarsMade.equalsIgnoreCase("Sports Cars")) {
             return new SportsCar(baseCost);
 
-        } else if(typeCarsMade.equalsIgnoreCase("Hybrid Cars")){
+        } else if (typeCarsMade.equalsIgnoreCase("Hybrid Cars")) {
             return new HybridCar(baseCost);
 
-        } else if(typeCarsMade.equalsIgnoreCase("Trucks")){
+        } else if (typeCarsMade.equalsIgnoreCase("Trucks")) {
             return new Truck(baseCost);
         }
 

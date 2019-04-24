@@ -1,11 +1,11 @@
 package mediatorPattern.java;
 
+import decoratorAndFactoryPattern.java.Car;
+import decoratorAndFactoryPattern.java.Factory;
+
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import decoratorAndFactoryPattern.java.Car;
-import decoratorAndFactoryPattern.java.Factory;
 
 // Manufacturer is an object that simulates the actions and attributes of a manufacturer
 public class Manufacturer {
@@ -50,7 +50,8 @@ public class Manufacturer {
     public void sellCars() {
 
         //Add up all the cars in the inventory
-        int totalNumCars = inventory.get("Sports Cars").size() + inventory.get("Trucks").size() + inventory.get("Hybrid Cars").size();
+        int totalNumCars = inventory.get("Sports Cars").size() + 
+                inventory.get("Trucks").size() + inventory.get("Hybrid Cars").size();
         double costOfSellingCars = 0;
         double valueFromSellingCars = 0;
 
@@ -91,7 +92,8 @@ public class Manufacturer {
             ArrayList<Car> carsToAdd = f.makeCars(num);
             for (Car c: carsToAdd) {
                 inventory.get(f.getTypeCarsMade()).add(c);
-                //System.out.print("Just made a " + f.getTypeCarsMade() + " for " + c.getBaseCost() + "!! ");
+                //System.out.print("Just made a " + f.getTypeCarsMade() 
+                // + " for " + c.getBaseCost() + "!! ");
             }
             System.out.print("\n");
             double costOfMakingCars = num * f.costPerCar();
