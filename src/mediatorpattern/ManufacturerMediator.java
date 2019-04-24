@@ -83,7 +83,7 @@ public class ManufacturerMediator implements Mediator {
     public void run() {
         while (manufacturers.size() > 1) {
             try {
-                Thread.sleep(100);
+                Thread.sleep(1000);
                 makeCars();
                 sellCars();
                 sellAndBuyManufacturer();
