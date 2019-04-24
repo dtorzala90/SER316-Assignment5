@@ -1,4 +1,4 @@
-package decoratorandfactorypattern;
+package factorypattern;
 
 // Interface for a Car object
 public interface Car {

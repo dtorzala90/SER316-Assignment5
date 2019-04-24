@@ -35,9 +35,10 @@ sourceSets {
     main {
         java {
             srcDirs 'src/main/java'
-            srcDirs 'src/decoratorandfactorypattern'
-            srcDirs 'src/test/java'
+            srcDirs 'src/factorypattern'
+            srcDirs 'src/decoratorpattern'
             srcDirs 'src/mediatorpattern'
+            srcDirs 'src/test/java'
         }
     }
  }

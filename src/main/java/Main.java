@@ -1,12 +1,12 @@
 package main.java;
 
-import decoratorandfactorypattern.FactoryDecorator;
-import decoratorandfactorypattern.FactoryImpl;
-import decoratorandfactorypattern.HybridCheaperDecorator;
-import decoratorandfactorypattern.HybridSpeedupDecorator;
-import decoratorandfactorypattern.SportsCarCheaperDecorator;
-import decoratorandfactorypattern.TruckCheaperDecorator;
-import decoratorandfactorypattern.TruckSpeedupDecorator;
+import decoratorpattern.FactoryDecorator;
+import decoratorpattern.FactoryImpl;
+import decoratorpattern.HybridCheaperDecorator;
+import decoratorpattern.HybridSpeedupDecorator;
+import decoratorpattern.SportsCarCheaperDecorator;
+import decoratorpattern.TruckCheaperDecorator;
+import decoratorpattern.TruckSpeedupDecorator;
 import mediatorpattern.Manufacturer;
 import mediatorpattern.ManufacturerMediator;
 

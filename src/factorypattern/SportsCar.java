@@ -1,4 +1,4 @@
-package decoratorandfactorypattern;
+package factorypattern;
 
 //SportsCar is a basic implementation of the interface Car. It could be further specified
 //according to real world stats

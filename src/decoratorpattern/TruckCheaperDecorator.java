@@ -1,4 +1,4 @@
-package decoratorandfactorypattern;
+package decoratorpattern;
 
 //This is a decorator for making a factory produce Trucks for 50% of original cost
 //when it wraps a factory object

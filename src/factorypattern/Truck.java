@@ -1,11 +1,11 @@
-package decoratorandfactorypattern;
+package factorypattern;
 
-// HybridCar is a basic implementation of the interface Car. It could be further specified
-// according to real world stats
-public class HybridCar implements Car {
+//Truck is a basic implementation of the interface Car. It could be further specified
+//according to real world stats
+public class Truck implements Car {
     private double baseCost;
 
-    public HybridCar(double baseCost) {
+    public Truck(double baseCost) {
         this.baseCost = baseCost;
     }
 

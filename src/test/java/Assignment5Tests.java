@@ -5,12 +5,12 @@ import java.util.ArrayList;
 import org.junit.Before;
 import org.junit.Test;
 
-import decoratorandfactorypattern.Factory;
-import decoratorandfactorypattern.FactoryDecorator;
-import decoratorandfactorypattern.FactoryImpl;
-import decoratorandfactorypattern.HybridSpeedupDecorator;
-import decoratorandfactorypattern.SportsCarSpeedupDecorator;
-import decoratorandfactorypattern.TruckSpeedupDecorator;
+import decoratorpattern.Factory;
+import decoratorpattern.FactoryDecorator;
+import decoratorpattern.FactoryImpl;
+import decoratorpattern.HybridSpeedupDecorator;
+import decoratorpattern.SportsCarSpeedupDecorator;
+import decoratorpattern.TruckSpeedupDecorator;
 import mediatorpattern.Manufacturer;
 
 public class Assignment5Tests {

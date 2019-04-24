@@ -1,4 +1,4 @@
-package decoratorandfactorypattern;
+package decoratorpattern;
 
 //This is a decorator for making a factory produce Sports cars with 150% of original productivity
 //when it wraps a factory object

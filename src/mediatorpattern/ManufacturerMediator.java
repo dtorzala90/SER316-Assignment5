@@ -1,8 +1,8 @@
 package mediatorpattern;
 
-import decoratorandfactorypattern.Factory;
-
 import java.util.ArrayList;
+
+import decoratorpattern.Factory;
 
 //ManufacturerMediator utilizes the mediator design patter by having it control the actions of
 //all the manufacturers and the timing of them using a Thread.sleep method

@@ -1,7 +1,11 @@
-package decoratorandfactorypattern;
+package decoratorpattern;
 
 import java.util.ArrayList;
 
+import factorypattern.Car;
+import factorypattern.HybridCar;
+import factorypattern.SportsCar;
+import factorypattern.Truck;
 import mediatorpattern.Manufacturer;
 
 // A basic implementation of a factory object. This is the class that will be wrapped
