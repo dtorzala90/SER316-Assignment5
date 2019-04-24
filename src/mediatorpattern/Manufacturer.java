@@ -1,7 +1,7 @@
-package mediatorPattern.java;
+package mediatorpattern;
 
-import decoratorAndFactoryPattern.java.Car;
-import decoratorAndFactoryPattern.java.Factory;
+import decoratorandfactorypattern.Car;
+import decoratorandfactorypattern.Factory;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -17,7 +17,13 @@ public class Manufacturer {
     private double totalMoney;
     private double totalValue;
 
-    //Constructor that also initiates the inventory to have zero cars
+    /**Manufacturer constructor.
+     * 
+     * @param pname is the name of the manufacturer
+     * @param pfactory is the initial factory added to the manufacturer
+     * @param startMoney is the starting money allotted to the manufacturer
+     * @param startValue is the starting value the manufacturer has
+     */
     public Manufacturer(String pname, Factory pfactory, double startMoney, double startValue) {
         this.name = pname;
         this.totalMoney = startMoney;
@@ -26,7 +32,11 @@ public class Manufacturer {
         initiateInventory();
     }
 
-    //Method for adding factories to the manufacturer
+    /**Method for adding factories to the manufacturer.
+     * 
+     * @param pfactory is the factory to be added to the manufacturer
+     * @return boolean
+     */
     public boolean addFactory(Factory pfactory) {
 
         //Check whether this is the first factory being added
@@ -46,12 +56,14 @@ public class Manufacturer {
         }
     }
 
-    //Method for simulating selling a random number of cars within a certain expected range
+    /**Method for simulating selling a random number of cars within a certain expected range.
+     * 
+     */
     public void sellCars() {
 
         //Add up all the cars in the inventory
-        int totalNumCars = inventory.get("Sports Cars").size() + 
-                inventory.get("Trucks").size() + inventory.get("Hybrid Cars").size();
+        int totalNumCars = inventory.get("Sports Cars").size() 
+                + inventory.get("Trucks").size() + inventory.get("Hybrid Cars").size();
         double costOfSellingCars = 0;
         double valueFromSellingCars = 0;
 
@@ -83,7 +95,9 @@ public class Manufacturer {
         totalValue -= valueFromSellingCars;
     }
 
-    //Method for simulating the making of the cars
+    /**Method for simulating the making of the cars.
+     * 
+     */
     public void makeCars() {
 
         //Iterate through each factory and add the cars made to the inventory
@@ -103,7 +117,9 @@ public class Manufacturer {
         }
     }
 
-    //Method for initializing the inventory to have zero cars
+    /**Method for initializing the inventory to have zero cars.
+     * 
+     */
     private void initiateInventory() {
         inventory = new HashMap<String, ArrayList<Car>>();
         inventory.put("Sports Cars", new ArrayList<Car>());
@@ -111,7 +127,9 @@ public class Manufacturer {
         inventory.put("Hybrid Cars", new ArrayList<Car>());
     }
 
-    //Method for printing the manufacturer's data to the console
+    /**Method for printing the manufacturer's data to the console.
+     * 
+     */
     public void printManufacturerData() {
         DecimalFormat df = new DecimalFormat("#.00");
         System.out.println("***********************\n"

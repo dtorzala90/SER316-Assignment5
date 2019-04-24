@@ -1,10 +1,10 @@
-package decoratorAndFactoryPattern.java;
+package decoratorandfactorypattern;
 
-//This is a decorator for making a factory produce Hybrid cars with 180% of original productivity
+//This is a decorator for making a factory produce Trucks with 180% of original productivity
 //when it wraps a factory object
-public class HybridSpeedupDecorator extends FactoryDecorator {
+public class TruckSpeedupDecorator extends FactoryDecorator {
 
-    public HybridSpeedupDecorator(Factory factory) {
+    public TruckSpeedupDecorator(Factory factory) {
         super(factory);
     }
 

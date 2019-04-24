@@ -1,8 +1,8 @@
-package decoratorAndFactoryPattern.java;
+package decoratorandfactorypattern;
 
 import java.util.ArrayList;
 
-import mediatorPattern.java.Manufacturer;
+import mediatorpattern.Manufacturer;
 
 // A basic implementation of a factory object. This is the class that will be wrapped
 // by the appropriate decorators and also implements the factory design pattern in the getCar method
@@ -19,7 +19,10 @@ public class FactoryImpl implements Factory {
         this.baseCost = baseCost;
     }
 
-    // This method takes in the number of cars to be made and returns an array list of those objects
+    /**This method takes in the number of cars to be made 
+     * and returns an array list of those objects.
+     * 
+     */
     public ArrayList<Car> makeCars(int numToMake) {
         ArrayList<Car> carList = new ArrayList<Car>();
         for (int i = 0; i < numToMake; i++) {
@@ -28,9 +31,12 @@ public class FactoryImpl implements Factory {
         return carList;
     }
 
-    // This method is what implements the factory design pattern
-    // by returning the correct Car object depending on the type of car needed
-    public Car getCar(){
+    /**This method is what implements the factory design pattern
+     *  by returning the correct Car object depending on the type of car needed.
+     * 
+     * @return Car object
+     */
+    public Car getCar() {
         if (typeCarsMade == null) {
             return null;
         }		

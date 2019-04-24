@@ -1,4 +1,4 @@
-package decoratorAndFactoryPattern.java;
+package decoratorandfactorypattern;
 
 // HybridCar is a basic implementation of the interface Car. It could be further specified
 // according to real world stats

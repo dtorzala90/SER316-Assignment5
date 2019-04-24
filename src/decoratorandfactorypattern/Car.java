@@ -1,4 +1,4 @@
-package decoratorAndFactoryPattern.java;
+package decoratorandfactorypattern;
 
 // Interface for a Car object
 public interface Car {

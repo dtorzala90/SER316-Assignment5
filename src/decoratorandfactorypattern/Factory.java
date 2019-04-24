@@ -1,4 +1,4 @@
-package decoratorAndFactoryPattern.java;
+package decoratorandfactorypattern;
 
 import java.util.ArrayList;
 

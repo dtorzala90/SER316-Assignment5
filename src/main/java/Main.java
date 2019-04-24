@@ -1,7 +1,14 @@
 package main.java;
 
-import decoratorAndFactoryPattern.java.*;
-import mediatorPattern.java.*;
+import decoratorandfactorypattern.FactoryDecorator;
+import decoratorandfactorypattern.FactoryImpl;
+import decoratorandfactorypattern.HybridCheaperDecorator;
+import decoratorandfactorypattern.HybridSpeedupDecorator;
+import decoratorandfactorypattern.SportsCarCheaperDecorator;
+import decoratorandfactorypattern.TruckCheaperDecorator;
+import decoratorandfactorypattern.TruckSpeedupDecorator;
+import mediatorpattern.Manufacturer;
+import mediatorpattern.ManufacturerMediator;
 
 public class Main {
     /**
@@ -21,14 +28,14 @@ public class Main {
                 new HybridSpeedupDecorator(basicHFactory));
         FactoryDecorator cheaperTFactory = new FactoryDecorator(
                 new TruckCheaperDecorator(basicTFactory));
-        FactoryDecorator cheaperSCFactory = new FactoryDecorator(
+        FactoryDecorator cheaperScFactory = new FactoryDecorator(
                 new SportsCarCheaperDecorator(basicScFactory));
         FactoryDecorator cheaperHFactory = new FactoryDecorator(
                 new HybridCheaperDecorator(basicHFactory));
 
         Manufacturer m1 = new Manufacturer(
                 "BMW",spedUpTFactory, 1000000.0, 20000000.0);
-        m1.addFactory(cheaperSCFactory);
+        m1.addFactory(cheaperScFactory);
         Manufacturer m2 = new Manufacturer(
                 "Volkswagen",cheaperHFactory, 700000.0, 15000000.0);
         m2.addFactory(spedUpHFactory);

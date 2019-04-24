@@ -1,8 +1,8 @@
-package mediatorPattern.java;
+package mediatorpattern;
+
+import decoratorandfactorypattern.Factory;
 
 import java.util.ArrayList;
-
-import decoratorAndFactoryPattern.java.Factory;
 
 //ManufacturerMediator utilizes the mediator design patter by having it control the actions of
 //all the manufacturers and the timing of them using a Thread.sleep method
@@ -63,7 +63,8 @@ public class ManufacturerMediator implements Mediator {
         //If the wealthy manufacturer can afford the cheap one than it buys the cheap one
         if (wealthiest != cheapest && wealthiest.getTotalMoney() > cheapest.getTotalValue()) {
             manufacturerBuysManufacturer(wealthiest, cheapest);
-            System.out.println(wealthiest.getName() + " just bought out " + cheapest.getName() + "!!");
+            System.out.println(wealthiest.getName() 
+                    + " just bought out " + cheapest.getName() + "!!");
             manufacturers.remove(cheapest);
         }
 
